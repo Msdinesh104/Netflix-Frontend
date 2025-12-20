@@ -24,7 +24,7 @@ function App() {
     setPassMsg("");
 
     if (!user.includes("@")) {
-      setEmailMsg("Invalid email format");
+      setEmailMsg("Please enter a valid email or mobile number.");
       setInfo(true);
       return;
     }
