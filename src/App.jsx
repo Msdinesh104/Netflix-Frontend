@@ -32,7 +32,7 @@ function App() {
     }
 
     if (pass.length < 4 || pass.length > 60) {
-      setPassMsg("Password must be 4-60 characters");
+      setPassMsg("Your password must contain between 4 and 60 characters.");
       setPassInfo(true);
       return;
     }
@@ -100,7 +100,7 @@ function App() {
                   type="email"
                   value={user}
                   onChange={handleEmailChange}
-                  placeholder="Mail or Mobile Number"
+                  placeholder="Email or Mobile Number"
                   className="border border-gray-500 p-3 bg-transparent text-white rounded-md"
                 />
                 {info && <p className="text-red-500">{emailMsg}</p>}
