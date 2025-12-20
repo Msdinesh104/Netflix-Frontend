@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-import bg from "./assets/netflix.jpg"
+import bg from "./assets/netflix.jpg";
 
 function App() {
   const [user, setUser] = useState("");
@@ -12,8 +12,6 @@ function App() {
   const [emailMsg, setEmailMsg] = useState("");
   const [passMsg, setPassMsg] = useState("");
   const navigate = useNavigate();
-
-
 
   const handleEmailChange = (e) => setUser(e.target.value);
   const handlePassChange = (e) => setPass(e.target.value);
@@ -38,43 +36,41 @@ function App() {
     }
 
     axios
-      .post("https://netflix-backend-1-qi9t.onrender.com/login", { email: user.trim(), password: pass.trim() })
-     .then((res) => {
-  if (res.data.success) {
-    setEmailMsg("");
-    setPassMsg("");
-    setInfo(false);
-    setPassInfo(false);
+      .post("https://netflix-backend-1-qi9t.onrender.com/login", {
+        email: user.trim(),
+        password: pass.trim(),
+      })
+      .then((res) => {
+        if (res.data.success) {
+          setEmailMsg("");
+          setPassMsg("");
+          setInfo(false);
+          setPassInfo(false);
 
-    // ✅ CLEAR INPUT FIELDS
-    setUser("");
-    setPass("");
+          // ✅ CLEAR INPUT FIELDS
+          setUser("");
+          setPass("");
 
-   navigate("/dashbored"); // or whatever route you defined for Dashbored
-
-  } else {
-    setEmailMsg(res.data.emailError || "");
-    setPassMsg(res.data.passwordError || "");
-    setInfo(!!res.data.emailError);
-    setPassInfo(!!res.data.passwordError);
-  }
-})
-.catch((err) => { console.log(err, "something went wrong"); 
-  setEmailMsg("Something went wrong"); 
-  setPassMsg("Something went wrong"); 
-  setInfo(true); setPassInfo(true); }); 
-
+          navigate("/dashbored"); // or whatever route you defined for Dashbored
+        } else {
+          setEmailMsg(res.data.emailError || "");
+          setPassMsg(res.data.passwordError || "");
+          setInfo(!!res.data.emailError);
+          setPassInfo(!!res.data.passwordError);
+        }
+      })
+      .catch((err) => {
+        console.log(err, "something went wrong");
+        setEmailMsg("Something went wrong");
+        setPassMsg("Something went wrong");
+        setInfo(true);
+        setPassInfo(true);
+      });
   };
 
-
-
-
-
-
   return (
-
-   <>
-     {/* MAIN SECTION */}
+    <>
+      {/* MAIN SECTION */}
       <div className="relative min-h-screen bg-black">
         {/* Background image */}
         <img
@@ -137,10 +133,8 @@ function App() {
 
               <div className="mt-4 text-gray-300 text-sm space-y-2">
                 <label className="flex items-center gap-2">
-                  <input
-                   type="checkbox"
-                  />
-                 <span className='text-base font-medium'>Remember me</span> 
+                  <input type="checkbox" />
+                  <span className="text-base font-medium">Remember me</span>
                 </label>
                 <p>
                   New to Netflix?{" "}
@@ -148,8 +142,13 @@ function App() {
                     Sign up now
                   </span>
                 </p>
-                <p className='text-sm text-neutral-500 font-semibold '>This page is protected by Google reCAPTCHA to ensure you're not a bot.</p> 
-                <p className='text-blue-500 underline'><a href='#'>learn more</a></p>
+                <p className="text-sm text-neutral-500 font-semibold ">
+                  This page is protected by Google reCAPTCHA to ensure you're
+                  not a bot.
+                </p>
+                <p className="text-blue-500 underline">
+                  <a href="#">learn more</a>
+                </p>
               </div>
             </div>
           </div>
@@ -175,10 +174,8 @@ function App() {
           <option>English</option>
         </select>
       </footer>
-   </>
-
-
-  )
+    </>
+  );
 }
 
 export default App;

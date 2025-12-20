@@ -38,14 +38,24 @@ const Dashbored = () => {
           <h2 className="mb-4 text-lg font-semibold text-white">MENU</h2>
           <div className="flex flex-col gap-3 font-medium">
             <p className="hover:text-red-500 cursor-pointer transition">Home</p>
-            <p className="hover:text-red-500 cursor-pointer transition">Discovery</p>
-            <p className="hover:text-red-500 cursor-pointer transition">Coming Soon</p>
-            <p className="hover:text-red-500 cursor-pointer transition">Community</p>
+            <p className="hover:text-red-500 cursor-pointer transition">
+              Discovery
+            </p>
+            <p className="hover:text-red-500 cursor-pointer transition">
+              Coming Soon
+            </p>
+            <p className="hover:text-red-500 cursor-pointer transition">
+              Community
+            </p>
           </div>
 
-          <h2 className="mt-10 mb-4 text-lg font-semibold text-white">GENERAL</h2>
+          <h2 className="mt-10 mb-4 text-lg font-semibold text-white">
+            GENERAL
+          </h2>
           <div className="flex flex-col gap-3 font-medium">
-            <p className="hover:text-red-500 cursor-pointer transition">Settings</p>
+            <p className="hover:text-red-500 cursor-pointer transition">
+              Settings
+            </p>
             <p className="hover:text-red-500 cursor-pointer transition">Help</p>
           </div>
 
@@ -70,9 +80,7 @@ const Dashbored = () => {
               className="rounded-xl w-full shadow-lg shadow-red-900/20 transition group-hover:brightness-75"
             />
 
-            <button
-              className="absolute bottom-4 left-6 bg-red-600 hover:bg-red-700 transition px-4 py-2 rounded-full text-sm md:text-base font-semibold shadow-md"
-            >
+            <button className="absolute bottom-4 left-6 bg-red-600 hover:bg-red-700 transition px-4 py-2 rounded-full text-sm md:text-base font-semibold shadow-md">
               Watch Now
             </button>
           </div>
@@ -91,9 +99,13 @@ const Dashbored = () => {
           </div>
 
           {/* RECOMMENDED */}
-          <h2 className="text-xl font-semibold mb-6 mt-6">Recommended Movies</h2>
+          <h2 className="text-xl font-semibold mb-6 mt-6">
+            Recommended Movies
+          </h2>
           <div className="flex gap-4 overflow-x-auto pb-10">
-            <div className="text-gray-400">📌 Add your recommend images here</div>
+            <div className="text-gray-400">
+              📌 Add your recommend images here
+            </div>
           </div>
         </div>
       </section>
